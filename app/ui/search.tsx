@@ -13,6 +13,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const term: string = e.target.value;
       const params = new URLSearchParams(searchParams);
+      params.set("page", "1");
 
       if (term) {
         params.set("query", term);
